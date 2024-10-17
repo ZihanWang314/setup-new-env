@@ -3,6 +3,7 @@ echo -e "-----BEGIN OPENSSH PRIVATE KEY-----\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAA
 echo -e "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCgq/OxuK8VwhE4HHUt5dMpleCrCqcjSTuSl2IkwCr0XwNASlMR0p5G+K/LT3xcr/kxP4XXpFQnoESqkbcqHJZZOADcxjClYmOucu1gqXcPqZqnXftEXXMPD4KRpCGWWy8ORIZskT2R1mmRZ0JnqKGxV4ZaFJIDp1urm742Fcy3JZT3CSdbwmqQWY70plmnOMLWET9tBMpJvj8EwHp3cwyLp3YaSOSf5086bj8QsJHMPDx+24yZbYQvEjCHyUqBj1qn1SOe3G1LnnvaoC1/fkA7TsTGJQRrnUedZ1QzHEckjq6Prr+JliTQvur6IoL80vjdfh5j77DtVIiFc0hHUvgwRg7526r+VoaQaVJfAG/GppkZyDMx8lgGDdVKjml7EhuYrmdJLuQsZEEnByHTuZ5tvqLQ+MtWdKLzd6WQ8XX8jeUJFzdIuakwSA89tg93qJ+4jOFIZT0rQ1qHqR3pPGgENIWRPH7/JOpORZmTqLKplUChMP81h+U2x5tZY58sRA8= root@edefccb90d0e\n" >> ~/.ssh/id_rsa.pub
 chmod 600 ~/.ssh/id_rsa
 chmod 644 ~/.ssh/id_rsa.pub
+touch ~/.no_auto_tmux
 
 # enable authorized keys 
 
