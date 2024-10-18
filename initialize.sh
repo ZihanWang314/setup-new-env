@@ -20,12 +20,16 @@ sudo apt update
 sudo apt install wget
 cd ~
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh -b # automatically agree all things
-source miniconda3/etc/profile.d/conda.sh  # initialize conda for non-interactive shell
+export CONDA_PREFIX="/opt/conda"
+if [ -d $CONDA_PREFIX ]; then
+    rm -rf $CONDA_PREFIX
+fi
+bash Miniconda3-latest-Linux-x86_64.sh -b -p $CONDA_PREFIX # automatically agree all things
+source $CONDA_PREFIX/etc/profile.d/conda.sh  # initialize conda for non-interactive shell
 conda activate base
 
 # download agent environment
-conda env create -n agent python=3.12
+conda create -n agent python=3.12 -y
 conda activate agent
 
 cat <<EOL > ~/requirements.txt
@@ -123,8 +127,6 @@ sudo code-server \
     --install-extension ms-python.vscode-pylance \
     --install-extension ms-toolsai.jupyter
 
-if [ -d "/opt/conda" ]; then
-    sudo rm -rf /opt/conda
-fi
+
 
 echo "everything is set up. please use ctrl+shift+p to reload window."
