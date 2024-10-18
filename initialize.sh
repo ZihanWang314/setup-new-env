@@ -123,6 +123,6 @@ sudo code-server \
     --install-extension ms-python.vscode-pylance \
     --install-extension ms-toolsai.jupyter
 
-
+# mv   /root/miniconda3/envs/* /opt/conda/envs
 
 echo "everything is set up. please use ctrl+shift+p to reload window."
