@@ -20,12 +20,12 @@ sudo apt update
 sudo apt install wget
 cd ~
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-export CONDA_PREFIX="/opt/conda"
-if [ -d $CONDA_PREFIX ]; then
-    rm -rf $CONDA_PREFIX
+export CONDA_HOME="/opt/conda"
+if [ -d $CONDA_HOME ]; then
+    rm -rf $CONDA_HOME
 fi
-bash Miniconda3-latest-Linux-x86_64.sh -b -p $CONDA_PREFIX # automatically agree all things
-source $CONDA_PREFIX/etc/profile.d/conda.sh  # initialize conda for non-interactive shell
+bash Miniconda3-latest-Linux-x86_64.sh -b -p $CONDA_HOME # automatically agree all things
+source $CONDA_HOME/etc/profile.d/conda.sh  # initialize conda for non-interactive shell
 conda activate base
 
 # download agent environment
