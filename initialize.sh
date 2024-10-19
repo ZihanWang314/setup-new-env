@@ -90,6 +90,7 @@ uvicorn==0.22.0
 vocab==0.0.5
 wasabi==1.1.3
 xformers==0.0.27.post1
+flask==3.0.3
 EOL
 pip install -r ~/requirements.txt
 
