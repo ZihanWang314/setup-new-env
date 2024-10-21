@@ -19,6 +19,7 @@ sudo apt-get install build-essential -y
 
 sudo apt update
 sudo apt install wget
+sudo apt install lsof
 cd ~
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 export CONDA_HOME="/opt/conda"
