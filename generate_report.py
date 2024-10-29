@@ -1,5 +1,6 @@
 import argparse
 import os
+import json
 
 def generate_report(directory, output_file, preferences_file):
     user_preferences = {}
@@ -34,6 +35,9 @@ def generate_report(directory, output_file, preferences_file):
                     content = '"""\n' + content + '\n' + '"""' + '\n'
                     output.write(content)
                     file_counter += 1
+        with open(preferences_file, 'w') as pref_file:
+            json.dump(user_preferences, pref_file, indent=4)
+
         print(f"Report generated successfully at: {output_file}")
     except Exception as e:
         print(f"Error occurred while generating the report: {e}")
@@ -45,7 +49,7 @@ if __name__ == "__main__":
     # Add arguments for directory path and output file path
     parser.add_argument("--dir", type=str, help="The path of the directory to be processed.")
     parser.add_argument("--out", type=str, help="The path of the output TXT file.", default="report.txt", required=False)
-    parser.add_argument("--pref", type=str, help="The path of the preferences JSON file.", default="pref.txt", required=False)
+    parser.add_argument("--pref", type=str, help="The path of the preferences JSON file.", default="pref.json", required=False)
     
     # Parse the arguments
     args = parser.parse_args()
