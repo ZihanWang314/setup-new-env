@@ -110,6 +110,11 @@ git clone git@github.com:ZihanWang314/agent-scaling-law.git
 cd agent-scaling-law
 bash setup.sh
 
+git clone git@github.com:ZihanWang314/AI-wrench.git
+git clone git@github.com:ZihanWang314/dump-to-gpt.git
+git clone git@github.com:ZihanWang314/setup-new-env.git
+
+
 
 #### SECTION 4: initialize vscode. This seems problematic, so you still need to download it manually
 sudo apt update
@@ -130,6 +135,10 @@ sudo code-server \
     --install-extension ms-python.vscode-pylance \
     --install-extension ms-toolsai.jupyter
 
+#### SECTION 5: create alias
+alias gacu='git add . && git commit -m "update" && git push'
+echo "alias gacu='git add . && git commit -m \"update\" && git push'" >> ~/.bashrc
 
 
 echo "everything is set up. please use ctrl+shift+p to reload window."
+conda init
