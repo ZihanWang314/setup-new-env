@@ -1,6 +1,12 @@
+import argparse
 import os
 
-def generate_report(directory, output_file):
+def generate_report(directory, output_file, preferences_file):
+    user_preferences = {}
+    if os.path.exists(preferences_file):
+        with open(preferences_file, 'r') as pref_file:
+            user_preferences = json.load(pref_file)
+
     try:
         with open(output_file, 'w') as output:
             file_counter = 1
@@ -9,6 +15,15 @@ def generate_report(directory, output_file):
                     continue
                 for file in files:
                     file_path = os.path.join(root, file)
+                    if file_path in user_preferences:
+                        use_file = user_preferences[file_path]
+                    else:
+                        use_file = input(f"Do you want to use the file '{file_path}'? (y/N): ").strip().lower()
+                        while use_file not in ['y', 'n']:
+                            use_file = input(f"Do you want to use the file '{file_path}'? (y/N): ").strip().lower()
+                        user_preferences[file_path] = use_file
+                    if use_file == 'n':
+                        continue
                     try:
                         with open(file_path, 'r', encoding='utf-8') as file_content:
                             content = file_content.read()
@@ -25,7 +40,20 @@ def generate_report(directory, output_file):
 
 if __name__ == "__main__":
     # Specify your directory path and output TXT file name
-    directory_path = "data-annotation-kfs-zihan" #input("Enter the directory path: ")
-    output_txt_path = "report.txt" #input("Enter the output TXT file path: ")
+    parser = argparse.ArgumentParser(description="Process directory path and output TXT file path.")
     
-    generate_report(directory_path, output_txt_path)
+    # Add arguments for directory path and output file path
+    parser.add_argument("--dir", type=str, help="The path of the directory to be processed.")
+    parser.add_argument("--out", type=str, help="The path of the output TXT file.", default="report.txt", required=False)
+    parser.add_argument("--pref", type=str, help="The path of the preferences JSON file.", default="pref.txt", required=False)
+    
+    # Parse the arguments
+    args = parser.parse_args()
+    
+    # Access the arguments
+    directory_path = args.dir
+    output_txt_path = args.out
+    preferences_file = args.pref
+    
+    # Generate the report
+    generate_report(directory_path, output_txt_path, preferences_file)
