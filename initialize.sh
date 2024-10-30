@@ -53,7 +53,6 @@ six==1.16.0
 tqdm==4.66.4
 typing-extensions==4.12.2
 urllib3==2.2.2
-accelerate==0.34.2
 argparse==1.4.0
 attrdict==2.0.1
 datasets==3.0.0
@@ -83,15 +82,9 @@ seaborn==0.13.2
 sentencepiece==0.2.0
 setuptools==75.1.0
 spacy==3.7.6
-tokenizers==0.20.1
-torch==2.4.0 --index-url https://download.pytorch.org/whl/cu121
-torchvision==0.19.0 --index-url https://download.pytorch.org/whl/cu121
-transformers==4.45.2
-triton==3.0.0
 uvicorn==0.22.0
 vocab==0.0.5
 wasabi==1.1.3
-xformers==0.0.27.post1
 flask==3.0.3
 EOL
 pip install -r ~/requirements.txt
@@ -106,13 +99,11 @@ ssh-keyscan -t ed25519 $GITHUB_HOST >> ~/.ssh/known_hosts
 git config --global user.email 510642032wzh@gmail.com
 git config --global user.name "ZihanWang314"
 
-git clone git@github.com:ZihanWang314/agent-scaling-law.git
-cd agent-scaling-law
-bash setup.sh
-
 git clone git@github.com:ZihanWang314/AI-wrench.git
 git clone git@github.com:ZihanWang314/dump-to-gpt.git
 git clone git@github.com:ZihanWang314/setup-new-env.git
+git clone git@github.com:ZihanWang314/data-annotation-kfs-zihan.git
+
 
 
 
@@ -143,12 +134,11 @@ sudo mv ngrok /usr/local/bin
 rm grok-stable-linux-amd64.zip
 ngrok config add-authtoken 2o8cqtZyKXdkaSwadcofC3SKF63_EutnpWQZJVPjnsaM38vd
 ngrok http 5000
-sudo apt-get install zip unzip
 
 #### SECTION 6: create alias
 alias gacu='git add . && git commit -m "update" && git push'
 echo "alias gacu='git add . && git commit -m \"update\" && git push'" >> ~/.bashrc
 
 
-echo "everything is set up. please use ctrl+shift+p to reload window."
 conda init
+echo "everything is set up. please use ctrl+shift+p to reload window."
