@@ -12,14 +12,14 @@ echo -e "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCz9lXWYBTMeJs+0ir/RHWxQlh/QBvb6xp
 
 # install cmake
 sudo apt-get update
-sudo apt-get install build-essential -y
+sudo apt-get install build-essential zip unzip -y
 
 
 #### SECTION 2: installing anaconda
 
 sudo apt update
-sudo apt install wget
-sudo apt install lsof
+sudo apt install wget -y
+sudo apt install lsof -y
 cd ~
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 export CONDA_HOME="/opt/conda"
@@ -127,11 +127,11 @@ sudo code-server \
     --install-extension ms-toolsai.jupyter
 
 #### SECTION 5: download oray and ngrok
-sudo apt-get install ngrok-client
+apt install iproute2 -y
 wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip
 unzip ngrok-stable-linux-amd64.zip
 sudo mv ngrok /usr/local/bin
-rm grok-stable-linux-amd64.zip
+rm ngrok-stable-linux-amd64.zip
 ngrok config add-authtoken 2o8cqtZyKXdkaSwadcofC3SKF63_EutnpWQZJVPjnsaM38vd
 ngrok http 5000
 
