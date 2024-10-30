@@ -143,6 +143,7 @@ sudo mv ngrok /usr/local/bin
 rm grok-stable-linux-amd64.zip
 ngrok config add-authtoken 2o8cqtZyKXdkaSwadcofC3SKF63_EutnpWQZJVPjnsaM38vd
 ngrok http 5000
+sudo apt-get install zip unzip
 
 #### SECTION 6: create alias
 alias gacu='git add . && git commit -m "update" && git push'
