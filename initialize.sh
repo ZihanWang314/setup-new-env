@@ -135,7 +135,16 @@ sudo code-server \
     --install-extension ms-python.vscode-pylance \
     --install-extension ms-toolsai.jupyter
 
-#### SECTION 5: create alias
+#### SECTION 5: download oray and ngrok
+sudo apt-get install ngrok-client
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.zip
+unzip ngrok-stable-linux-amd64.zip
+sudo mv ngrok /usr/local/bin
+rm grok-stable-linux-amd64.zip
+ngrok config add-authtoken 2o8cqtZyKXdkaSwadcofC3SKF63_EutnpWQZJVPjnsaM38vd
+ngrok http 5000
+
+#### SECTION 6: create alias
 alias gacu='git add . && git commit -m "update" && git push'
 echo "alias gacu='git add . && git commit -m \"update\" && git push'" >> ~/.bashrc
 
