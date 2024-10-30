@@ -102,7 +102,7 @@ git config --global user.name "ZihanWang314"
 git clone git@github.com:ZihanWang314/AI-wrench.git
 git clone git@github.com:ZihanWang314/dump-to-gpt.git
 git clone git@github.com:ZihanWang314/setup-new-env.git
-git clone git@github.com:ZihanWang314/data-annotation-kfs-zihan.git
+git clone git@github.com:ZihanWang314/data-annotation-kfs.git
 
 
 
