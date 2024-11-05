@@ -139,6 +139,8 @@ ngrok http 5000
 alias gacu='git add . && git commit -m "update" && git push'
 echo "alias gacu='git add . && git commit -m \"update\" && git push'" >> ~/.bashrc
 
+#### SECTION 7: login huggingface
+huggingface-cli login --token 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 --add-to-git-credential
 
 conda init
 echo "everything is set up. please use ctrl+shift+p to reload window."
