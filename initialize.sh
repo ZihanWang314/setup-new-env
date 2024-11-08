@@ -12,7 +12,7 @@ echo -e "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCz9lXWYBTMeJs+0ir/RHWxQlh/QBvb6xp
 
 # install cmake
 sudo apt-get update
-sudo apt-get install build-essential zip unzip -y
+sudo apt-get install build-essential zip unzip screen -y
 
 
 #### SECTION 2: installing anaconda
