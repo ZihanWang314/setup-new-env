@@ -11,7 +11,7 @@ transformers==4.45.2
 triton==3.0.0
 xformers==0.0.27.post1
 EOL
-pip install -r ~/requirements.txt
+pip install -r ~/requirements-gpu.txt
 
 cd ~/project
 git clone git@github.com:ZihanWang314/agent-scaling-law.git
